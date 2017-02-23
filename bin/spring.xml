@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+				http://www.springframework.org/schema/aop 
+				http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+				http://www.springframework.org/schema/context 
+				http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+	
+	<bean name="triangle" class="org.suraj.javaStyle.model.Triangle">
+	<property name="name" value="Triangle name"/>
+	</bean>
+	<bean name="circle" class="org.suraj.javaStyle.model.Circle">
+	<property name="name" value="Circle name"/>
+	</bean>
+	<bean id="ShapeService" class="org.suraj.javaStyle.services.ShapeService" autowire="byName">
+	</bean>
+	<bean name="loggingAspect" class="org.suraj.javaStyle.aspect.LoggingAspect">
+	</bean>
+	<context:annotation-config/>
+	<aop:aspectj-autoproxy/>
+	</beans>
